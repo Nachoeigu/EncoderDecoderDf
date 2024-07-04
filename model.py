@@ -55,6 +55,10 @@ if __name__ == '__main__':
 
     print(encoded_decoder_app.encoded_dataframe.head())
     print(encoded_decoder_app.mappings)
-
+    #LLM process --> return the same dataframe but with a new variable "prediction"
+    df_from_llm = encoded_decoder_app.encoded_dataframe.copy()
+    df_from_llm['prediction'] = ['1','0','1','0']
+    #We read the result from the LLM: we see we have our original data and also the analyze/modification of the LLM
+    print(encoded_decoder_app.decode_encoded_dataframe(df_from_llm))
 
     
