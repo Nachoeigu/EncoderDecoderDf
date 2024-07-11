@@ -26,7 +26,7 @@ class DecoderEncoderDatabases:
         mappings = {}
         
         for column in dataframe.columns:
-            if df[column].dtype != object:
+            if dataframe[column].dtype != object:
                 continue
             unique_values = dataframe[column].unique()
             
